@@ -1,0 +1,14 @@
+# Family links between politicians (sample data, fictional).
+# Format: id|id|type
+# Types: spouse, parent, sibling, cousin
+# For "parent", the FIRST id is the parent and the SECOND id is the child.
+# Lines starting with # are ignored. IDs come from politicians.txt.
+1|4|spouse
+1|7|parent
+4|7|parent
+7|5|cousin
+2|3|sibling
+3|6|spouse
+2|10|cousin
+10|9|spouse
+8|9|parent

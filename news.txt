@@ -1,0 +1,11 @@
+# News shown on the Home page (sample items, fictional).
+# Format: date|category|title|summary|link (optional)|politician id (optional)
+# Date must be YYYY-MM-DD. Newest items appear first. Do not use the | character inside a field.
+# To leave the link empty but add a politician, keep two bars: ...|summary||4
+2026-10-24|Elections|Filing period opens with several relatives on the ballot|Election officials confirm that candidates from at least two political families have filed for local and national posts this cycle.
+2026-10-22|Policy|Senate panel advances affordable medicine expansion|A committee led by Corazon Reyes approved a bill to widen the list of price-capped medicines, sending it to the floor for debate.||4
+2026-10-19|Accountability|Open budget advocates call for wider spending disclosure|Civic groups praised a senator who publishes her yearly expenses and urged other officials to follow the same practice.||8
+2026-10-17|Dynasty|Two family networks account for every listed post|An analysis of the tracker data shows all ten listed officials belong to one of two family networks: six in the Santos group and four in the Dela Cruz group.
+2026-10-14|Local|City hall portal cuts permit waiting times|Mayor Fernando Aquino-Lim reported shorter waits for business permits after the online portal went live in all districts.||7
+2026-10-10|Policy|Teachers allowance raised in the second district|Congressman Jose Miguel Garcia announced a higher local allowance and new classrooms funded this year.||9
+2026-10-06|Local|Island communities receive typhoon resistant homes|Governor Teresita Mendoza handed over the latest batch of climate resilient houses to coastal families.||6
