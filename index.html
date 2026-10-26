@@ -65,10 +65,10 @@ const txt=async f=>{const r=await fetch(f,{cache:'no-store'});if(!r.ok)throw new
 const rows=t=>t.split(/\r?\n/).map(l=>l.trim()).filter(l=>l&&l[0]!=='#').map(l=>l.split('|').map(x=>x.trim()));
 const sn=n=>{const w=n.split(/\s+/);let i=w.length-1;while(i>0&&/^(de|del|dela|delos|san|santa|van|von)$/i.test(w[i-1]))i--;return w.slice(i).join(' ')};
 async function main(){
-const P=rows(await txt('data/politicians.txt')).filter(c=>c.length>=6&&/^\d+$/.test(c[0])).map(c=>({id:+c[0],name:c[1],party:c[2],pos:c[3],plat:c[4],rec:c.slice(5).join('|'),s:sn(c[1])}));
+const P=rows(await txt('politicians.txt')).filter(c=>c.length>=6&&/^\d+$/.test(c[0])).map(c=>({id:+c[0],name:c[1],party:c[2],pos:c[3],plat:c[4],rec:c.slice(5).join('|'),s:sn(c[1])}));
 const ids=new Set(P.map(p=>p.id));
-const R=rows(await txt('data/relations.txt')).filter(c=>ids.has(+c[0])&&ids.has(+c[1])&&['spouse','parent','sibling','cousin'].includes(c[2])).map(c=>[+c[0],+c[1],c[2]]);
-const NEWS=rows(await txt('data/news.txt')).filter(c=>c.length>=4).map(c=>({date:c[0],cat:c[1],title:c[2],sum:c[3],link:c[4]||'',pid:c[5]||''})).sort((a,b)=>b.date.localeCompare(a.date));
+const R=rows(await txt('relations.txt')).filter(c=>ids.has(+c[0])&&ids.has(+c[1])&&['spouse','parent','sibling','cousin'].includes(c[2])).map(c=>[+c[0],+c[1],c[2]]);
+const NEWS=rows(await txt('news.txt')).filter(c=>c.length>=4).map(c=>({date:c[0],cat:c[1],title:c[2],sum:c[3],link:c[4]||'',pid:c[5]||''})).sort((a,b)=>b.date.localeCompare(a.date));
 const PAL=['#7F77DD','#1D9E75','#D85A30','#BA7517','#378ADD','#D4537E'],COL={};[...new Set(P.map(p=>p.party))].forEach((k,i)=>{COL[k]=PAL[i%PAL.length]});
 const STY={parent:{d:[],w:2.4},spouse:{d:[],w:1.4},sibling:{d:[7,4],w:1.4},cousin:{d:[2,4],w:1.6}};
 const byId=new Map(P.map(p=>[p.id,p]));
